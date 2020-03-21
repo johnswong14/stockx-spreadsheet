@@ -43,7 +43,7 @@ def main():
         
         if update_price(sheet, end_row):
             output_filename = f"output_{int(time.time())}.xlsx"
-            os.chdir("./output")
+            os.chdir(config.OUTPUT_DIR)
             workbook.save(filename=output_filename)
             end = time.time()
             duration = format(end - start, '.2f')

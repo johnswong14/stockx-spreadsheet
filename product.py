@@ -40,6 +40,7 @@ def get_prices(requested_item, search_result_products=None):
                     search_result_products = search_result['Products']
                 else:
                     print(f"Failed retrieving information for {requested_item['title']}:")
+                    print("Timed out\n")
                     return
             except Exception as e:
                 print(f"Failed retrieving information for {requested_item['title']}:")
