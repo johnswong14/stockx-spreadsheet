@@ -12,7 +12,7 @@ def update_price(sheet, end_row):
     
     try:
         if is_format_valid(sheet):
-            for value in sheet.iter_rows(min_row=2,
+            for value in sheet.iter_rows(min_row=138,
                                     max_row=end_row,
                                     min_col=1,
                                     max_col=10,
