@@ -25,14 +25,13 @@ def update_price(sheet, end_row):
                 }
                 
                 if product['title']:
-                    if product['ticker_symbol']:
-                        product_info = get_prices(product)
-                    else:
-                        ticker_symbol, search_result_products = get_ticker_symbol(product)
+                    if not product['ticker_symbol']:
+                        ticker_symbol = get_ticker_symbol(product)
                         if (ticker_symbol):
                             value[2].value = ticker_symbol
                             product['ticker_symbol'] = value[2].value
-                            product_info = get_prices(product, search_result_products)
+                    
+                    product_info = get_prices(product)
                     
                     if product_info:
                         total_items += 1
